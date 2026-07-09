@@ -1,0 +1,110 @@
+# KumbhSathi AI — Docker Compose
+# PostgreSQL + PostGIS + pgvector | Redis | FastAPI Backend
+
+version: '3.9'
+
+services:
+  # ============================================================
+  # PostgreSQL with PostGIS + pgvector
+  # ============================================================
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: kumbhsathi-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: kumbhsathi
+      POSTGRES_USER: kumbhsathi_user
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-kumbhsathi_secure_2027}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ../database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kumbhsathi_user -d kumbhsathi"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - kumbhsathi-net
+
+  # ============================================================
+  # Redis (caching, WebSocket pub/sub, background jobs)
+  # ============================================================
+  redis:
+    image: redis:7-alpine
+    container_name: kumbhsathi-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - kumbhsathi-net
+
+  # ============================================================
+  # FastAPI Backend
+  # ============================================================
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    container_name: kumbhsathi-backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+asyncpg://kumbhsathi_user:${DB_PASSWORD:-kumbhsathi_secure_2027}@db:5432/kumbhsathi
+      REDIS_URL: redis://redis:6379/0
+      JWT_SECRET_KEY: ${JWT_SECRET:-your-super-secret-key-change-in-production}
+      JWT_ALGORITHM: HS256
+      JWT_EXPIRATION_MINUTES: 60
+      UPLOAD_DIR: /app/uploads
+      CORS_ORIGINS: '["http://localhost:3000","http://localhost:8080"]'
+      ENVIRONMENT: development
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../backend/app:/app/app
+      - ../data:/app/data
+      - uploads_data:/app/uploads
+      - ml_models:/app/ml_models
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - kumbhsathi-net
+
+  # ============================================================
+  # Nginx Reverse Proxy (Production)
+  # ============================================================
+  nginx:
+    image: nginx:alpine
+    container_name: kumbhsathi-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - backend
+    networks:
+      - kumbhsathi-net
+    profiles:
+      - production
+
+volumes:
+  postgres_data:
+  redis_data:
+  uploads_data:
+  ml_models:
+
+networks:
+  kumbhsathi-net:
+    driver: bridge

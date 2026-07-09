@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KumbhSathi AI - Volunteer Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#5191ee",
+                        "on-primary-fixed": "#000000",
+                        "surface-container-high": "#e3e9ee",
+                        "on-secondary-fixed": "#003b8d",
+                        "inverse-on-surface": "#9a9da0",
+                        "on-tertiary-fixed-variant": "#471900",
+                        "on-tertiary": "#fff7f5",
+                        "error-dim": "#67040d",
+                        "surface-dim": "#d4dbe1",
+                        "background": "#f7f9fc",
+                        "primary-container": "#609efd",
+                        "surface-tint": "#005eb8",
+                        "inverse-surface": "#0b0f11",
+                        "tertiary-fixed-dim": "#eb6600",
+                        "surface-container-low": "#f0f4f8",
+                        "on-primary": "#f8f8ff",
+                        "on-secondary-container": "#194da7",
+                        "secondary-fixed-dim": "#c5d4ff",
+                        "surface-variant": "#dce3e9",
+                        "secondary": "#2c5bb6",
+                        "on-error-container": "#6e0a12",
+                        "on-tertiary-container": "#371200",
+                        "on-primary-fixed-variant": "#002957",
+                        "error-container": "#fa746f",
+                        "primary-dim": "#0052a2",
+                        "on-background": "#2c3338",
+                        "surface-container-highest": "#dce3e9",
+                        "error": "#a83836",
+                        "surface-bright": "#f7f9fc",
+                        "tertiary-dim": "#8c3a00",
+                        "tertiary-fixed": "#ff7004",
+                        "tertiary": "#a04300",
+                        "on-surface": "#2c3338",
+                        "on-secondary": "#f9f8ff",
+                        "surface": "#f7f9fc",
+                        "secondary-fixed": "#d9e2ff",
+                        "on-tertiary-fixed": "#000000",
+                        "secondary-container": "#d9e2ff",
+                        "primary-fixed": "#609efd",
+                        "inverse-primary": "#609efd",
+                        "secondary-dim": "#1b4fa9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#2858b2",
+                        "on-primary-container": "#002046",
+                        "tertiary-container": "#ff7004",
+                        "outline": "#747c81",
+                        "on-error": "#fff7f6",
+                        "on-surface-variant": "#596065",
+                        "outline-variant": "#abb3b9",
+                        "surface-container": "#e9eef3",
+                        "primary": "#005eb8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter", "sans-serif"],
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface h-screen flex flex-col overflow-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary bg-surface-container-lowest flex items-center justify-center">
+<img alt="Rajesh Patel Avatar" class="w-full h-full object-cover" data-alt="A highly detailed close up portrait of a young Indian male volunteer wearing a professional uniform or jacket. The lighting is bright and even, conveying a sense of trustworthiness and professionalism suitable for a government or official app. The background is a clean, neutral studio grey." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4kKId2hPpn1YpjYP8McQLkidkmAdcEKaY237KSBDq0eJhzN-QBJ9nKlufSM4ttnIyfj_TxdycURjjjFTP-bl8sVrVHIOymaeKocq-GDc4bPAT8-7Wpvbe-UE-odtIi99zx63R9pcGPWkb8rgzor1yjHW1OgH2mlTPZMsVsrzd-DHsIJ2eSIrfzrO2P1WVLVHFkedKzBkUhbPbfrdaRvF5CSN6gvSx1imx3GTP-eJa1RVN3ynf4SVO97dKnBPOeBivxLR6gwS1sxI"/>
+</div>
+<h1 class="font-headline text-headline-sm font-bold text-primary dark:text-primary-fixed-dim">KumbhSathi Volunteer</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 ease-in-out relative">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border border-surface"></span>
+</button>
+</header>
+<!-- Main Scrollable Content -->
+<main class="flex-1 overflow-y-auto pt-20 pb-24 px-4 w-full max-w-lg mx-auto hide-scrollbar">
+<!-- Brand Logo Header -->
+<div class="flex justify-center mb-6 mt-2">
+<img alt="KumbhSathi AI Logo" class="h-16 w-16 rounded-md shadow-sm" src="https://lh3.googleusercontent.com/aida/AP1WRLvHGdYVclQrT0KnrgO91E1FhmW0dOz9GVyzGswa6lwJT9bKauVJYBaAaqECrVHfKfPwqa-a55ERliw5C0UHIWnuBP1IIiT1MrwHB_u2E2xFJlpvyZ9VYb-gH4e4qeBOxiC75zrvf0QY4il28iFbFicZkOX4d7UQMH4--R2pSnGjyMK99xn0BN74EX89px53hSHShq_ly8WGIpiiGWquqijxqp9mACklMzRgWwQgLlvdwPBSCiqb35XnPHg"/>
+</div>
+<!-- Profile & Status Card -->
+<section class="bg-surface-container-lowest rounded-xl p-5 shadow-sm border border-surface-container mb-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h2 class="font-display text-xl font-bold text-on-surface">Rajesh Patel</h2>
+<p class="font-body text-sm text-on-surface-variant font-medium mt-0.5">ID: VOL-8842</p>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-2.5 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label text-xs font-bold uppercase tracking-wider">Verified</span>
+</div>
+</div>
+<div class="bg-surface-container rounded-lg p-3 flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="font-label text-sm font-semibold text-on-surface">Active &amp; Available for Search</span>
+<span class="font-body text-xs text-on-surface-variant">Ready for immediate dispatch</span>
+</div>
+<!-- Custom Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-14 h-7 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-[#2e7d32]"></div>
+</label>
+</div>
+</section>
+<!-- KPI Summary Grid -->
+<section class="grid grid-cols-3 gap-3 mb-6">
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm border border-surface-container flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-primary mb-1 text-2xl" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-display text-2xl font-bold text-on-surface">1</span>
+<span class="font-label text-xs text-on-surface-variant mt-1">Assigned<br/>Cases</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm border border-surface-container flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-secondary mb-1 text-2xl" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<span class="font-display text-2xl font-bold text-on-surface">12</span>
+<span class="font-label text-xs text-on-surface-variant mt-1">Completed<br/>Today</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm border border-surface-container flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-tertiary mb-1 text-2xl" style="font-variation-settings: 'FILL' 1;">timer</span>
+<span class="font-display text-2xl font-bold text-on-surface">32h</span>
+<span class="font-label text-xs text-on-surface-variant mt-1">Hours<br/>Active</span>
+</div>
+</section>
+<!-- Active Task Callout (Main Focus) -->
+<section class="mb-8">
+<h3 class="font-label text-sm font-bold text-on-surface-variant uppercase tracking-widest mb-3 ml-1">Current Assignment</h3>
+<div class="bg-surface-container-lowest rounded-xl shadow-md border-l-4 border-error overflow-hidden relative">
+<!-- Decorative pattern -->
+<div class="absolute top-0 right-0 opacity-5 pointer-events-none w-32 h-32" style="background-image: radial-gradient(circle at 100% 0%, #a83836 0%, transparent 70%);"></div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-2 bg-error-container text-on-error-container px-3 py-1 rounded-md">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-label text-xs font-black tracking-widest">HIGH PRIORITY</span>
+</div>
+<span class="font-label text-xs text-outline font-medium">Case ID: KMP-2027-01042</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<div class="w-14 h-14 rounded-lg bg-surface-container flex-shrink-0 border border-outline-variant overflow-hidden">
+<img alt="Ramesh Kumar" class="w-full h-full object-cover" data-alt="A clear, respectful portrait photograph of a 72-year-old Indian man, Ramesh Kumar. He has silver hair, weathered but dignified features, and is wearing a simple light-colored shirt. The background is a soft, neutral blur to keep the focus on his face. This image serves as an identification photo within a high-contrast professional app interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8GNpr0bDupm8-iHZvqPoqS84ZEAHL5JN-3mfNbZ_Ei4fQVS190PHfGr2pxFtGb_gm4EAbdXHL5pxwfv4a2l9jAGtpk2cDJiRf63fZCcrbDBygBFw0ZkBko_MCDJI5NMwwuaX6bBVYcP6XuDzIpKbwotTlK4decY99wxSRoPUhAkYQnkAwXqdW1s0sJTwoQjqWFQPezhSGIALTQSRxJzH13CIMG_FDCneM0B0BHxMeBib4dpPhuDIDjTC2GTnmoAU7yivc-RZJWrg"/>
+</div>
+<div>
+<h4 class="font-display text-xl font-bold text-on-surface">Ramesh Kumar</h4>
+<p class="font-body text-sm text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                    Age: 72
+                                </p>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-surface-container">
+<p class="font-label text-xs text-on-surface-variant mb-1">LAST SEEN LOCATION</p>
+<p class="font-body text-sm font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-error text-[18px]" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                                Madsangvi Transit
+                            </p>
+</div>
+</div>
+<div class="flex flex-col gap-3 mt-6">
+<button class="w-full bg-primary hover:bg-primary-dim text-on-primary font-label text-sm font-bold py-3.5 px-4 rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">navigation</span>
+                            Navigate to Location
+                        </button>
+<button class="w-full bg-tertiary-container hover:bg-tertiary text-on-tertiary-container hover:text-on-tertiary font-label text-sm font-bold py-3.5 px-4 rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">edit_document</span>
+                            Update Status
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<div class="flex justify-center opacity-50 mt-4 mb-2">
+<img alt="Gov Seal" class="h-10 w-10 grayscale" src="https://lh3.googleusercontent.com/aida/AP1WRLuyjoL4E-sC_NInN48T13mzAb5mEaXdFRY7bkOfXK2BIWCJIizCKhIL3E8PWu8PIGNABsozgIySWfzuoYoEMV_zuk786EVQcDugZairUKzsNWJZRqOzVt8ilFPV0ICci6nhr6eKAPc5PPl3_WaAbAYl9JaUyRZJ7lfK6-fNBASQ_W5SWNgkx1dpnebLbzXOQe8WSXfLvBUr92Hpjzj1st5jGgPiV9AHR6OIZQtCI1r0bkYvb7waZYPqKYQ"/>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-4 pt-2 bg-surface-container dark:bg-inverse-surface border-t border-outline-variant rounded-t-xl shadow-[0_-2px_10px_rgba(0,0,0,0.05)] md:hidden">
+<!-- Active Tab: Dashboard -->
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-secondary-dim text-on-primary-container dark:text-on-secondary rounded-xl px-3 py-1 active:scale-95 transition-transform duration-150 w-16">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label text-[10px] font-medium leading-none">Dashboard</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-highest dark:hover:bg-surface-variant rounded-xl active:scale-95 transition-transform duration-150 w-16">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">assignment_late</span>
+<span class="font-label text-[10px] font-medium leading-none">Tasks</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-highest dark:hover:bg-surface-variant rounded-xl active:scale-95 transition-transform duration-150 w-16">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">history_edu</span>
+<span class="font-label text-[10px] font-medium leading-none">Cases</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-highest dark:hover:bg-surface-variant rounded-xl active:scale-95 transition-transform duration-150 w-16">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">person_check</span>
+<span class="font-label text-[10px] font-medium leading-none">Profile</span>
+</button>
+</nav>
+</body></html>

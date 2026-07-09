@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Face Scan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#2c3338",
+                        "secondary-container": "#d9e2ff",
+                        "primary-dim": "#0052a2",
+                        "surface": "#f7f9fc",
+                        "on-error": "#fff7f6",
+                        "tertiary-fixed": "#ff7004",
+                        "tertiary-container": "#ff7004",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#003b8d",
+                        "on-tertiary-fixed": "#000000",
+                        "surface-container": "#e9eef3",
+                        "primary-fixed-dim": "#5191ee",
+                        "background": "#f7f9fc",
+                        "surface-bright": "#f7f9fc",
+                        "error-container": "#fa746f",
+                        "surface-container-high": "#e3e9ee",
+                        "on-error-container": "#6e0a12",
+                        "on-secondary-fixed-variant": "#2858b2",
+                        "surface-variant": "#dce3e9",
+                        "surface-container-low": "#f0f4f8",
+                        "secondary": "#2c5bb6",
+                        "on-tertiary-container": "#371200",
+                        "tertiary-dim": "#8c3a00",
+                        "on-primary-container": "#002046",
+                        "on-surface": "#2c3338",
+                        "inverse-primary": "#609efd",
+                        "primary": "#005eb8",
+                        "surface-tint": "#005eb8",
+                        "on-primary": "#f8f8ff",
+                        "on-tertiary": "#fff7f5",
+                        "outline-variant": "#abb3b9",
+                        "inverse-on-surface": "#9a9da0",
+                        "tertiary": "#a04300",
+                        "on-tertiary-fixed-variant": "#471900",
+                        "on-primary-fixed": "#000000",
+                        "secondary-dim": "#1b4fa9",
+                        "surface-container-highest": "#dce3e9",
+                        "on-secondary-container": "#194da7",
+                        "on-primary-fixed-variant": "#002957",
+                        "inverse-surface": "#0b0f11",
+                        "secondary-fixed": "#d9e2ff",
+                        "error-dim": "#67040d",
+                        "surface-dim": "#d4dbe1",
+                        "on-surface-variant": "#596065",
+                        "secondary-fixed-dim": "#c5d4ff",
+                        "error": "#a83836",
+                        "tertiary-fixed-dim": "#eb6600",
+                        "on-secondary": "#f9f8ff",
+                        "primary-container": "#609efd",
+                        "primary-fixed": "#609efd",
+                        "outline": "#747c81",
+                        "success": "#166534", // Adding a reliable green for the prompt requirement
+                        "on-success": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter", "sans-serif"],
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    "keyframes": {
+                        scanline: {
+                            '0%': { top: '0%' },
+                            '50%': { top: '100%' },
+                            '100%': { top: '0%' },
+                        },
+                        pulseGreen: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '.5' },
+                        }
+                    },
+                    "animation": {
+                        'scanline': 'scanline 2s linear infinite',
+                        'pulse-green': 'pulseGreen 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .scan-overlay {
+            background: linear-gradient(180deg, rgba(0, 255, 0, 0) 0%, rgba(0, 255, 0, 0.2) 50%, rgba(0, 255, 0, 0) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body h-full flex flex-col antialiased">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline shadow-sm fixed top-0 w-full z-50 flex justify-between items-center px-4 h-16 transition-colors duration-200 ease-in-out">
+<button class="text-on-surface-variant hover:bg-surface-container-high p-2 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline text-headline-sm font-bold text-primary dark:text-primary-fixed-dim">Face Scan</h1>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content -->
+<main class="flex-1 mt-16 pb-24 px-4 flex flex-col max-w-2xl mx-auto w-full">
+<!-- Status Indicator -->
+<div class="py-4 text-center">
+<p class="text-sm font-medium text-on-surface-variant animate-pulse">Scanning face... keep camera steady</p>
+</div>
+<!-- Camera Preview Container -->
+<div class="relative w-full aspect-[3/4] bg-surface-container-high rounded-2xl overflow-hidden shadow-lg border border-outline-variant mx-auto">
+<!-- Simulated Camera Feed Image -->
+<img class="object-cover w-full h-full absolute inset-0" data-alt="A high-quality, front-facing portrait photograph of a man resembling an Indian citizen. The lighting is even and flat, typical of an ID photo or facial recognition scan. The background is slightly blurred and indistinct. The mood is neutral and objective." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaPOE7cTrcfASianblHh7tSQbM862qbuVMYZaTMbLRdrpSMtHGQ2fueySS234dAG3NReU8VF4TPN8ur9q-veqw1GdHiJt7XIjp_xPYUIc-Wg97vsTPy0bqoJ-vRw92oiVFY9D-4_42Py2l0QtVhEz3YO3AMeBIlErSi1ewO3QzYLeu9ojXRzl7v9ZWbmkv4XQKBSkKql_isZ8X5Nzi668goYGx3Rv7lTYC5FpyRvBZO8YAyvQXFC9mW10oD9Z6wKcb1PUOcrnz--E"/>
+<!-- Facial Recognition Bounding Box & Scanline -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="relative w-3/4 aspect-square border-2 border-green-500 rounded-lg animate-pulse-green shadow-[0_0_15px_rgba(34,197,94,0.5)]">
+<!-- Corner Markers -->
+<div class="absolute top-0 left-0 w-4 h-4 border-t-4 border-l-4 border-green-500 rounded-tl"></div>
+<div class="absolute top-0 right-0 w-4 h-4 border-t-4 border-r-4 border-green-500 rounded-tr"></div>
+<div class="absolute bottom-0 left-0 w-4 h-4 border-b-4 border-l-4 border-green-500 rounded-bl"></div>
+<div class="absolute bottom-0 right-0 w-4 h-4 border-b-4 border-r-4 border-green-500 rounded-br"></div>
+<!-- Scanline -->
+<div class="absolute w-full h-1 bg-green-400 scan-overlay animate-scanline shadow-[0_0_8px_rgba(74,222,128,0.8)] z-10"></div>
+</div>
+</div>
+<!-- Focus Overlay Grids -->
+<div class="absolute inset-0 grid grid-cols-3 grid-rows-3 pointer-events-none opacity-20">
+<div class="border-b border-r border-white"></div>
+<div class="border-b border-r border-white"></div>
+<div class="border-b border-white"></div>
+<div class="border-b border-r border-white"></div>
+<div class="border-b border-r border-white"></div>
+<div class="border-b border-white"></div>
+<div class="border-r border-white"></div>
+<div class="border-r border-white"></div>
+<div></div>
+</div>
+</div>
+<!-- Match Results Card -->
+<div class="mt-6 bg-surface-container-lowest rounded-xl p-5 shadow-sm border border-outline-variant/50">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-success" data-icon="check_circle" data-weight="fill">check_circle</span>
+<h2 class="font-headline font-bold text-success text-lg">Match Found: 92% confidence</h2>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center py-2 border-b border-surface-variant">
+<span class="text-on-surface-variant text-sm font-medium">Name</span>
+<span class="text-on-surface font-bold">Ramesh Kumar</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="text-on-surface-variant text-sm font-medium">Case ID</span>
+<span class="text-on-surface font-mono font-medium text-sm">KMP-2027-01042</span>
+</div>
+</div>
+</div>
+<div class="flex-1"></div> <!-- Spacer -->
+<!-- Action Buttons -->
+<div class="mt-8 flex flex-col gap-3">
+<button class="w-full bg-[#166534] hover:bg-green-800 text-white font-bold py-4 rounded-xl shadow-md transition-colors flex items-center justify-center gap-2 text-lg">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+                Confirm Match
+            </button>
+<button class="w-full bg-surface hover:bg-surface-container-low text-primary border border-primary font-semibold py-3 rounded-xl transition-colors">
+                Scan Again
+            </button>
+</div>
+</main>
+</body></html>

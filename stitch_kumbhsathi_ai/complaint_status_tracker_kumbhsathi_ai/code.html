@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KumbhSathi AI - Track Case</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#2c5bb6",
+                        "secondary-fixed": "#d9e2ff",
+                        "background": "#f7f9fc",
+                        "on-secondary-fixed": "#003b8d",
+                        "surface-container": "#e9eef3",
+                        "inverse-primary": "#609efd",
+                        "surface-bright": "#f7f9fc",
+                        "tertiary": "#a04300",
+                        "primary-fixed": "#609efd",
+                        "on-tertiary-container": "#371200",
+                        "on-tertiary": "#fff7f5",
+                        "on-primary": "#f8f8ff",
+                        "on-secondary": "#f9f8ff",
+                        "on-error-container": "#6e0a12",
+                        "surface": "#f7f9fc",
+                        "on-secondary-fixed-variant": "#2858b2",
+                        "on-surface-variant": "#596065",
+                        "on-primary-fixed-variant": "#002957",
+                        "error-dim": "#67040d",
+                        "surface-container-low": "#f0f4f8",
+                        "surface-container-highest": "#dce3e9",
+                        "on-background": "#2c3338",
+                        "primary-dim": "#0052a2",
+                        "tertiary-fixed-dim": "#eb6600",
+                        "on-surface": "#2c3338",
+                        "on-primary-container": "#002046",
+                        "inverse-surface": "#0b0f11",
+                        "primary-container": "#609efd",
+                        "primary-fixed-dim": "#5191ee",
+                        "outline-variant": "#abb3b9",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#dce3e9",
+                        "tertiary-container": "#ff7004",
+                        "on-tertiary-fixed-variant": "#471900",
+                        "on-primary-fixed": "#000000",
+                        "error-container": "#fa746f",
+                        "secondary-container": "#d9e2ff",
+                        "on-secondary-container": "#194da7",
+                        "tertiary-fixed": "#ff7004",
+                        "surface-tint": "#005eb8",
+                        "on-tertiary-fixed": "#000000",
+                        "primary": "#005eb8",
+                        "on-error": "#fff7f6",
+                        "secondary-fixed-dim": "#c5d4ff",
+                        "error": "#a83836",
+                        "surface-container-high": "#e3e9ee",
+                        "secondary-dim": "#1b4fa9",
+                        "surface-dim": "#d4dbe1",
+                        "inverse-on-surface": "#9a9da0",
+                        "outline": "#747c81",
+                        "tertiary-dim": "#8c3a00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "display": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .pulse-ring {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            80%, 100% { opacity: 0; transform: scale(2.5); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body antialiased selection:bg-primary-container selection:text-on-primary-container pb-28 pt-16">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface shadow-sm bg-surface-container-low flex justify-between items-center px-4 h-16 w-full md:hidden">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="A small, professional avatar placeholder image of a user in a clean, modern style. The background is a soft, light blue, and the figure is a stylized, minimalist silhouette representing a user profile, rendered in crisp high definition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi9skJ_ZcgAB0RiPKR0-6NWeHkl9uHKO0PG0M_6YhYNBshsidG1UdgXYlxcNvmAvbVrQhn12vfX2VbfhqxInX7uBLu0RxzmS3UJbua2OIjvgq6Ih_KmvX40gATxNacG99QyKeGi0d9LhjOwSSjPfxRxFCe6IHshD5nTGOS_7_A18aCNtAe22XeuRjf-R5z9b_XTUYh3rNGEK54yDBmDqJ50AlvumsEeobitux04lF2_WzF_QEPHjo5_g8f8RAf9ziyukMum-Jh1dE"/>
+</div>
+<h1 class="font-headline text-headline-sm font-bold tracking-tight text-on-surface">Track Case</h1>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-surface-container-high active:scale-95 duration-100 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="max-w-md mx-auto px-4 pt-6 space-y-6">
+<!-- Top Section: Patient/Case Info Card -->
+<section class="bg-surface-container-lowest rounded-xl p-5 shadow-sm border border-surface-variant relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary-container/20 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+<div class="flex items-start gap-4 relative z-10">
+<div class="w-16 h-16 rounded-full overflow-hidden shadow-sm border-2 border-surface-container-highest shrink-0">
+<img class="w-full h-full object-cover" data-alt="A professional, clear headshot of a middle-aged Indian man, Ramesh Kumar. He has a gentle expression. The lighting is soft and natural, emphasizing a modern, trustworthy feel appropriate for a premium app. The background is a clean, neutral gray." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRT_abmvorF6eDQsQa6McaeKWxf9zVzwokIr97f-NLjI1RW0Asy1wVsGXdGo3uwEqR9-CmXt6viwivuCBXfSxh2gzZSTlzDyHH675D8GkHX97nRnS7_MeiDuNNqnJr4s26aoWOV0kr9muTCrCFv6FpI5_8PyFWmf5f7ezvlwBZf_mBVUwdhJ9_1nWw3wgo4FTMZchL7EVUD6XKaFrQcYOd11B-AwGohBgiAz1_u8bbGBHND2W75pABg3ZEsVy05hf8iKz3vNLuqk8"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-1">
+<h2 class="text-lg font-bold text-on-surface truncate">Ramesh Kumar</h2>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-primary-container text-on-primary-container whitespace-nowrap ml-2">
+                            Searching
+                        </span>
+</div>
+<p class="text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">tag</span>
+                        KMP-2027-01042
+                    </p>
+</div>
+</div>
+</section>
+<!-- Middle Section: Timeline -->
+<section class="bg-surface-container-lowest rounded-xl p-5 shadow-sm border border-surface-variant">
+<h3 class="text-sm font-semibold text-on-surface-variant mb-6 uppercase tracking-wider">Status Progress</h3>
+<div class="relative pl-4 space-y-8">
+<!-- Timeline Line -->
+<div class="absolute left-[1.35rem] top-2 bottom-6 w-0.5 bg-surface-variant z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex gap-4">
+<div class="shrink-0 w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-sm font-bold" data-weight="fill">check</span>
+</div>
+<div class="pb-1">
+<h4 class="text-base font-semibold text-on-surface">Case Registered</h4>
+<p class="text-xs text-on-surface-variant mt-0.5">June 27, 10:00 AM</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex gap-4">
+<div class="shrink-0 w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-sm font-bold" data-weight="fill">check</span>
+</div>
+<div class="pb-1">
+<h4 class="text-base font-semibold text-on-surface">AI Analysis Completed</h4>
+<p class="text-xs text-on-surface-variant mt-0.5 mb-1">June 27, 10:15 AM</p>
+<div class="inline-flex items-center px-2 py-1 rounded bg-error-container/20 text-error-dim text-xs font-medium">
+<span class="material-symbols-outlined text-[14px] mr-1">priority_high</span>
+                            Priority: High
+                        </div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex gap-4">
+<div class="shrink-0 w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-sm font-bold" data-weight="fill">check</span>
+</div>
+<div class="pb-1">
+<h4 class="text-base font-semibold text-on-surface">Volunteer Assigned</h4>
+<p class="text-xs text-on-surface-variant mt-0.5 mb-1">June 27, 11:30 AM</p>
+<p class="text-sm text-on-surface bg-surface-container-low px-2.5 py-1.5 rounded-lg inline-block border border-surface-variant/50">
+                            Assigned to: <span class="font-medium">Rajesh Patel</span>
+</p>
+</div>
+</div>
+<!-- Step 4 (Current) -->
+<div class="relative z-10 flex gap-4">
+<div class="shrink-0 w-8 h-8 flex items-center justify-center relative">
+<div class="absolute inset-0 bg-primary/20 rounded-full pulse-ring"></div>
+<div class="w-4 h-4 rounded-full bg-primary ring-4 ring-surface-container-lowest relative z-10 shadow-[0_0_8px_rgba(0,94,184,0.6)]"></div>
+</div>
+<div class="pb-1">
+<h4 class="text-base font-bold text-primary">Search in Progress</h4>
+<div class="mt-2 p-3 bg-primary-container/10 border border-primary-container/30 rounded-lg flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">location_on</span>
+<p class="text-sm text-on-surface font-medium leading-tight">
+                                Last seen area: <br/>
+<span class="text-on-surface-variant font-normal">Sector 4 Ghat</span>
+</p>
+</div>
+</div>
+</div>
+<!-- Step 5 (Pending) -->
+<div class="relative z-10 flex gap-4 opacity-50 grayscale">
+<div class="shrink-0 w-8 h-8 rounded-full bg-surface-container-highest text-outline flex items-center justify-center ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-sm">handshake</span>
+</div>
+<div class="pb-1">
+<h4 class="text-base font-semibold text-on-surface-variant">Reunited</h4>
+<p class="text-xs text-outline mt-0.5">Pending</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl shadow-lg bg-surface-container flex justify-around items-center h-20 px-2 pb-safe w-full md:hidden">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1 hover:bg-on-surface/5 transition-transform active:scale-90 flex-1 h-full" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">home</span>
+<span class="font-label text-[10px] font-medium">Home</span>
+</a>
+<!-- Report -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1 hover:bg-on-surface/5 transition-transform active:scale-90 flex-1 h-full" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">record_voice_over</span>
+<span class="font-label text-[10px] font-medium">Report</span>
+</a>
+<!-- Track (Active) -->
+<a class="flex flex-col items-center justify-center py-1 transition-transform active:scale-90 flex-1 h-full" href="#">
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-5 py-1 mb-1">
+<span class="material-symbols-outlined text-[24px]" data-weight="fill">location_on</span>
+</div>
+<span class="font-label text-[10px] font-medium text-primary">Track</span>
+</a>
+<!-- Notifications -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1 hover:bg-on-surface/5 transition-transform active:scale-90 flex-1 h-full" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">notifications</span>
+<span class="font-label text-[10px] font-medium">Notifications</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1 hover:bg-on-surface/5 transition-transform active:scale-90 flex-1 h-full" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">person</span>
+<span class="font-label text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</body></html>

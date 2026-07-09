@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Verify Phone Number - KumbhSathi AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#003b8d",
+                      "on-primary-container": "#002046",
+                      "surface-container-highest": "#dce3e9",
+                      "tertiary": "#a04300",
+                      "secondary-container": "#d9e2ff",
+                      "surface-dim": "#d4dbe1",
+                      "primary-fixed": "#609efd",
+                      "primary": "#005eb8",
+                      "on-tertiary-container": "#371200",
+                      "tertiary-fixed-dim": "#eb6600",
+                      "background": "#f7f9fc",
+                      "on-tertiary-fixed": "#000000",
+                      "secondary": "#2c5bb6",
+                      "outline-variant": "#abb3b9",
+                      "error-dim": "#67040d",
+                      "on-surface": "#2c3338",
+                      "surface-container": "#e9eef3",
+                      "surface-tint": "#005eb8",
+                      "on-primary": "#f8f8ff",
+                      "surface-variant": "#dce3e9",
+                      "surface-bright": "#f7f9fc",
+                      "surface": "#f7f9fc",
+                      "on-error-container": "#6e0a12",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed-variant": "#002957",
+                      "primary-container": "#609efd",
+                      "primary-dim": "#0052a2",
+                      "error": "#a83836",
+                      "on-secondary-container": "#194da7",
+                      "on-primary-fixed": "#000000",
+                      "tertiary-container": "#ff7004",
+                      "outline": "#747c81",
+                      "on-background": "#2c3338",
+                      "secondary-fixed-dim": "#c5d4ff",
+                      "on-secondary-fixed-variant": "#2858b2",
+                      "primary-fixed-dim": "#5191ee",
+                      "tertiary-dim": "#8c3a00",
+                      "surface-container-high": "#e3e9ee",
+                      "on-tertiary-fixed-variant": "#471900",
+                      "tertiary-fixed": "#ff7004",
+                      "on-error": "#fff7f6",
+                      "inverse-on-surface": "#9a9da0",
+                      "inverse-surface": "#0b0f11",
+                      "on-secondary": "#f9f8ff",
+                      "error-container": "#fa746f",
+                      "secondary-fixed": "#d9e2ff",
+                      "surface-container-low": "#f0f4f8",
+                      "on-surface-variant": "#596065",
+                      "inverse-primary": "#609efd",
+                      "secondary-dim": "#1b4fa9",
+                      "on-tertiary": "#fff7f5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {},
+              "fontFamily": {
+                      "headline": [
+                              "Inter"
+                      ],
+                      "display": [
+                              "Inter"
+                      ],
+                      "body": [
+                              "Inter"
+                      ],
+                      "label": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {}
+      },
+          },
+        }
+      </script>
+<style>
+          .otp-input::-webkit-outer-spin-button,
+          .otp-input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+          }
+          .otp-input {
+              -moz-appearance: textfield;
+          }
+          .pulse-timer {
+              animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          }
+          @keyframes pulse {
+              0%, 100% { opacity: 1; }
+              50% { opacity: .5; }
+          }
+      </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- Watermark Background -->
+<div class="absolute inset-0 pointer-events-none opacity-5 z-0" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLsvxIqBJ-guNMpqoEC-8AfQ71i-jaDhXfq6UIvvojV5GcjJvaSs6pKsrtaBvPmV-miyfzMWOJQCaNXv_3zcLI7Yc04VB8LceJBV7Q_ToUEBJPeCEx_1Mz-gO3mYlVP4uumFqkmFCC9mYmgnUFUQEOwJvKsWRWQrRuV7nnMTzijDfnbNsNGVYmuPAE_ebgivBlnfZwsF6y1T8TZEvtkKpg2fcuQ6dhG3GdMb_KzyebXSdevggO4y9ATh_Q'); background-size: cover; background-position: center;"></div>
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim docked full-width top-0 z-50 bg-surface-container-high border-b border-outline-variant shadow-sm flex items-center justify-between px-4 h-16 w-full relative z-10">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="account_balance">account_balance</span>
+</div>
+<h1 class="text-primary dark:text-primary-fixed font-headline font-black text-lg tracking-tight">KumbhSathi AI</h1>
+</div>
+<button class="w-10 h-10 rounded-full hover:bg-surface-container-highest transition-colors active:opacity-80 transition-all flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col items-center justify-center px-6 py-12 relative z-10">
+<div class="w-full max-w-md flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-on-primary-container text-3xl" data-icon="lock_outline" style="font-variation-settings: 'FILL' 0;">lock_outline</span>
+</div>
+<h2 class="font-headline text-2xl md:text-3xl font-bold text-on-surface mb-2">Verify Phone Number</h2>
+<p class="text-on-surface-variant text-sm md:text-base mb-8">
+                Enter the 6-digit code sent to <span class="font-semibold text-on-surface">+91 98765 43210</span>
+</p>
+<!-- OTP Input Grid -->
+<div class="flex justify-between w-full gap-2 mb-8" id="otp-container">
+<input autofocus="" class="otp-input w-12 h-14 md:w-14 md:h-16 text-center text-2xl font-bold text-on-surface bg-surface-container-lowest border-2 border-outline-variant rounded-xl focus:border-primary focus:ring-0 focus:outline-none transition-colors shadow-sm" maxlength="1" oninput="if(this.value.length &gt; 1) this.value = this.value.slice(0,1);" type="number"/>
+<input class="otp-input w-12 h-14 md:w-14 md:h-16 text-center text-2xl font-bold text-on-surface bg-surface-container-lowest border-2 border-outline-variant rounded-xl focus:border-primary focus:ring-0 focus:outline-none transition-colors shadow-sm" maxlength="1" oninput="if(this.value.length &gt; 1) this.value = this.value.slice(0,1);" type="number"/>
+<input class="otp-input w-12 h-14 md:w-14 md:h-16 text-center text-2xl font-bold text-on-surface bg-surface-container-lowest border-2 border-outline-variant rounded-xl focus:border-primary focus:ring-0 focus:outline-none transition-colors shadow-sm" maxlength="1" oninput="if(this.value.length &gt; 1) this.value = this.value.slice(0,1);" type="number"/>
+<input class="otp-input w-12 h-14 md:w-14 md:h-16 text-center text-2xl font-bold text-on-surface bg-surface-container-lowest border-2 border-outline-variant rounded-xl focus:border-primary focus:ring-0 focus:outline-none transition-colors shadow-sm" maxlength="1" oninput="if(this.value.length &gt; 1) this.value = this.value.slice(0,1);" type="number"/>
+<input class="otp-input w-12 h-14 md:w-14 md:h-16 text-center text-2xl font-bold text-on-surface bg-surface-container-lowest border-2 border-outline-variant rounded-xl focus:border-primary focus:ring-0 focus:outline-none transition-colors shadow-sm" maxlength="1" oninput="if(this.value.length &gt; 1) this.value = this.value.slice(0,1);" type="number"/>
+<input class="otp-input w-12 h-14 md:w-14 md:h-16 text-center text-2xl font-bold text-on-surface bg-surface-container-lowest border-2 border-outline-variant rounded-xl focus:border-primary focus:ring-0 focus:outline-none transition-colors shadow-sm" maxlength="1" oninput="if(this.value.length &gt; 1) this.value = this.value.slice(0,1);" type="number"/>
+</div>
+<!-- Timer and Resend -->
+<div class="flex flex-col items-center gap-2 mb-8">
+<div class="flex items-center gap-1.5 text-on-surface-variant text-sm font-medium">
+<span class="material-symbols-outlined text-sm pulse-timer" data-icon="schedule">schedule</span>
+<span>Resend OTP in <span class="font-bold text-primary" id="timer">02:00</span></span>
+</div>
+<button class="text-sm font-semibold text-outline-variant cursor-not-allowed transition-colors" disabled="" id="resend-btn">
+                    Resend OTP
+                </button>
+</div>
+<!-- Primary Action -->
+<button class="w-full bg-primary hover:bg-primary-dim text-on-primary font-bold text-lg py-4 rounded-xl shadow-md hover:shadow-lg transition-all active:scale-[0.98] flex items-center justify-center gap-2 group">
+                Verify &amp; Proceed
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<a class="mt-6 text-sm text-primary font-medium hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="edit">edit</span>
+                Change Phone Number
+            </a>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-dim w-full py-6 mt-auto bg-surface-container-low border-t border-outline-variant flat flex flex-col items-center gap-4 px-8 text-center relative z-10">
+<img alt="Government of India Emblem" class="h-12 w-auto opacity-80" data-alt="Official Government of India emblem, minimalist and clean representation suitable for a professional footer." src="https://lh3.googleusercontent.com/aida/AP1WRLuyjoL4E-sC_NInN48T13mzAb5mEaXdFRY7bkOfXK2BIWCJIizCKhIL3E8PWu8PIGNABsozgIySWfzuoYoEMV_zuk786EVQcDugZairUKzsNWJZRqOzVt8ilFPV0ICci6nhr6eKAPc5PPl3_WaAbAYl9JaUyRZJ7lfK6-fNBASQ_W5SWNgkx1dpnebLbzXOQe8WSXfLvBUr92Hpjzj1st5jGgPiV9AHR6OIZQtCI1r0bkYvb7waZYPqKYQ"/>
+<div class="flex flex-wrap justify-center gap-4 font-body text-xs text-on-surface-variant">
+<a class="hover:text-primary hover:underline transition-all cursor-pointer" href="#">Safety Guidelines</a>
+<span class="text-outline-variant">•</span>
+<a class="hover:text-primary hover:underline transition-all cursor-pointer" href="#">Privacy Policy</a>
+<span class="text-outline-variant">•</span>
+<a class="hover:text-primary hover:underline transition-all cursor-pointer" href="#">Contact Us</a>
+</div>
+<p class="font-body text-xs text-on-surface-variant mt-2">© 2024 Ministry of Electronics &amp; IT, Government of India</p>
+</footer>
+<script>
+        // OTP Input Logic
+        const inputs = document.querySelectorAll('.otp-input');
+        
+        inputs.forEach((input, index) => {
+            input.addEventListener('input', (e) => {
+                if (e.target.value.length > 0 && index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                }
+            });
+
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && e.target.value === '' && index > 0) {
+                    inputs[index - 1].focus();
+                }
+            });
+        });
+
+        // Timer Logic
+        let timeLeft = 120;
+        const timerElement = document.getElementById('timer');
+        const resendBtn = document.getElementById('resend-btn');
+
+        const countdown = setInterval(() => {
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                timerElement.parentElement.innerHTML = '<span class="text-success font-medium">Ready to resend</span>';
+                resendBtn.disabled = false;
+                resendBtn.classList.remove('text-outline-variant', 'cursor-not-allowed');
+                resendBtn.classList.add('text-primary', 'hover:underline', 'cursor-pointer');
+            } else {
+                let m = Math.floor(timeLeft / 60);
+                let s = timeLeft % 60;
+                timerElement.innerText = `0${m}:${s < 10 ? '0' : ''}${s}`;
+                timeLeft--;
+            }
+        }, 1000);
+    </script>
+</body></html>

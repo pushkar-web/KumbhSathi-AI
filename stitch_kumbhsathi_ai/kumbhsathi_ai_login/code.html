@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KumbhSathi AI - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-background": "#2c3338",
+                        "tertiary-fixed": "#ff7004",
+                        "on-error-container": "#6e0a12",
+                        "surface-container-high": "#e3e9ee",
+                        "tertiary": "#a04300",
+                        "secondary-container": "#d9e2ff",
+                        "surface-container-low": "#f0f4f8",
+                        "on-tertiary": "#fff7f5",
+                        "on-tertiary-container": "#371200",
+                        "on-secondary-fixed": "#003b8d",
+                        "error-dim": "#67040d",
+                        "on-primary-fixed-variant": "#002957",
+                        "primary-container": "#609efd",
+                        "on-secondary-container": "#194da7",
+                        "inverse-surface": "#0b0f11",
+                        "tertiary-container": "#ff7004",
+                        "on-primary": "#f8f8ff",
+                        "surface-tint": "#005eb8",
+                        "on-secondary-fixed-variant": "#2858b2",
+                        "background": "#f7f9fc",
+                        "secondary-fixed": "#d9e2ff",
+                        "on-surface": "#2c3338",
+                        "on-error": "#fff7f6",
+                        "primary-dim": "#0052a2",
+                        "outline": "#747c81",
+                        "surface-dim": "#d4dbe1",
+                        "secondary": "#2c5bb6",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#005eb8",
+                        "on-primary-container": "#002046",
+                        "outline-variant": "#abb3b9",
+                        "surface-bright": "#f7f9fc",
+                        "primary-fixed-dim": "#5191ee",
+                        "secondary-dim": "#1b4fa9",
+                        "inverse-primary": "#609efd",
+                        "inverse-on-surface": "#9a9da0",
+                        "tertiary-fixed-dim": "#eb6600",
+                        "secondary-fixed-dim": "#c5d4ff",
+                        "primary-fixed": "#609efd",
+                        "on-secondary": "#f9f8ff",
+                        "error": "#a83836",
+                        "on-tertiary-fixed": "#000000",
+                        "surface-variant": "#dce3e9",
+                        "tertiary-dim": "#8c3a00",
+                        "error-container": "#fa746f",
+                        "surface-container-highest": "#dce3e9",
+                        "on-primary-fixed": "#000000",
+                        "surface": "#f7f9fc",
+                        "on-tertiary-fixed-variant": "#471900",
+                        "on-surface-variant": "#596065",
+                        "surface-container": "#e9eef3"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter", "sans-serif"],
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col relative overflow-y-auto">
+<!-- Header Section with Background -->
+<div class="relative w-full h-56 shrink-0 bg-primary/10">
+<!-- Background Image Placeholder -->
+<div class="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-80 z-0" data-alt="A serene, soft-focus background featuring the silhouette of a traditional Indian temple against a twilight sky, in shades of deep blue and soft orange, symbolizing the sacred context of the Kumbh Mela event, maintaining a modern and trustworthy official aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYMzfsSJMsa6FUeZyzA-7-FcrgGy7iv9FAokY6ope0uamjdI8Z-NkqWQ4jHaU3dzs10pSm0-x24TKo8x-fcYJkcvK_IWSC2CcxjFr7Tefkc3RPXZ4aUpFC-VkeCLgUS_DxFYrz0oJdHjHcbrOKx5beCq4Ig0yUHfD5eUUpK1BAdsAux80klc-DsnnCASDWjYYGbAo2lyns0YQp70t2sPumOuTkG5P0bjroRARxggmuWJdM_rRaIjMgjrDoFXuErNiNe0uKdlBjaKg')"></div>
+<!-- Gradient Overlay for readability -->
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-10"></div>
+<!-- Logo Container -->
+<div class="relative z-20 flex justify-center items-center h-full pt-12 pb-6 px-4">
+<img alt="KumbhSathi AI Logo" class="h-24 w-auto object-contain bg-surface-container-lowest rounded-xl shadow-sm px-4 py-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOtCR1Gvc0mvVi-wmFlLsc4n5G9M57sK9dX3KtUgMAz-Ic2HLhnjwVA2x7kiqayiSgaZCFnxsLuskYx2RA9Zg_d_38oc0QWv-6Qj9lIBQxGETf-YN2sslO_B8I39QTDBsWlp6NKf2Pv2Tuko7NI8Vw1IL4l_JugI_CWN-3fjGGeCdwhvwIGNQSIG8Ih-xO6cvC_mqZBctf93suIC1dmM6QUTv4gLaYImGQxtRugSz22QbNZVXqy3Bru5mMbL4SIuecZ7Gz3pDhs1E"/>
+</div>
+</div>
+<!-- Form Section -->
+<div class="flex-grow flex flex-col px-6 py-4 z-20 -mt-6">
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm border border-outline-variant/30 p-6 space-y-6 flex-grow">
+<!-- Title & Language Select -->
+<div class="flex justify-between items-start mb-2">
+<div>
+<h1 class="font-headline text-2xl font-bold text-on-surface">Welcome Back</h1>
+<p class="font-body text-sm text-on-surface-variant mt-1">Sign in to continue to KumbhSathi AI</p>
+</div>
+<div class="relative">
+<select class="appearance-none bg-surface-container-low border border-outline-variant text-on-surface text-sm rounded-lg pl-8 pr-8 py-2 focus:ring-primary focus:border-primary cursor-pointer w-32">
+<option value="en">English</option>
+<option value="hi">हिन्दी</option>
+<option value="mr">मराठी</option>
+</select>
+<span class="material-symbols-outlined absolute left-2 top-2.5 text-on-surface-variant text-[18px] pointer-events-none" style="font-variation-settings: 'FILL' 0;">language</span>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-on-surface-variant text-[18px] pointer-events-none" style="font-variation-settings: 'FILL' 0;">arrow_drop_down</span>
+</div>
+</div>
+<!-- Role Selector -->
+<div class="space-y-1.5">
+<label class="block font-label text-sm font-medium text-on-surface" for="role">Select Role</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface text-base rounded-xl pl-10 pr-10 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-shadow appearance-none" id="role">
+<option disabled="" selected="" value="">Choose your role</option>
+<option value="family">Family / Devotee</option>
+<option value="police">Police Officer</option>
+<option value="volunteer">Volunteer</option>
+<option value="admin">Admin</option>
+</select>
+<span class="material-symbols-outlined absolute left-3 top-3.5 text-on-surface-variant text-[20px] pointer-events-none" style="font-variation-settings: 'FILL' 0;">badge</span>
+<span class="material-symbols-outlined absolute right-3 top-3.5 text-on-surface-variant text-[20px] pointer-events-none" style="font-variation-settings: 'FILL' 0;">expand_more</span>
+</div>
+</div>
+<!-- Phone Number -->
+<div class="space-y-1.5">
+<label class="block font-label text-sm font-medium text-on-surface" for="phone">Phone Number</label>
+<div class="relative flex">
+<span class="inline-flex items-center px-4 rounded-l-xl border border-r-0 border-outline-variant bg-surface-container-low text-on-surface-variant text-base font-medium">
+                            +91
+                        </span>
+<input class="flex-1 min-w-0 block w-full px-3 py-3 rounded-none rounded-r-xl border border-outline-variant bg-surface-container-lowest text-on-surface text-base focus:ring-2 focus:ring-primary focus:border-primary transition-shadow" id="phone" placeholder="Enter mobile number" required="" type="tel"/>
+<span class="material-symbols-outlined absolute right-3 top-3.5 text-on-surface-variant text-[20px] pointer-events-none" style="font-variation-settings: 'FILL' 0;">phone_iphone</span>
+</div>
+</div>
+<!-- Password -->
+<div class="space-y-1.5">
+<label class="block font-label text-sm font-medium text-on-surface" for="password">Password</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface text-base rounded-xl pl-4 pr-10 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-shadow" id="password" placeholder="Enter your password" required="" type="password"/>
+<button aria-label="Toggle password visibility" class="absolute right-3 top-3.5 text-on-surface-variant hover:text-primary transition-colors focus:outline-none" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">visibility</span>
+</button>
+</div>
+<div class="flex justify-end pt-1">
+<a class="font-label text-sm font-medium text-primary hover:text-primary-dim transition-colors" href="#">Forgot Password?</a>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="pt-2 space-y-4">
+<button class="w-full bg-primary hover:bg-primary-dim text-on-primary font-label font-bold text-base rounded-xl py-3.5 shadow-sm active:scale-[0.98] transition-all flex justify-center items-center gap-2" type="submit">
+<span>Login</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">login</span>
+</button>
+<div class="relative flex py-2 items-center">
+<div class="flex-grow border-t border-outline-variant/40"></div>
+<span class="flex-shrink-0 mx-4 text-on-surface-variant text-sm font-medium">OR</span>
+<div class="flex-grow border-t border-outline-variant/40"></div>
+</div>
+<button class="w-full bg-surface-container-lowest border-2 border-primary text-primary hover:bg-primary/5 font-label font-bold text-base rounded-xl py-3 active:scale-[0.98] transition-all flex justify-center items-center gap-2" type="button">
+<span>Login with OTP</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">password</span>
+</button>
+</div>
+<!-- Register Link -->
+<div class="text-center pt-2">
+<p class="font-body text-sm text-on-surface-variant">
+                        Don't have an account? 
+                        <a class="font-label font-bold text-primary hover:underline" href="#">Register Here</a>
+</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Shared Component Footer -->
+<footer class="w-full py-6 px-4 flex flex-col items-center gap-4 bg-surface-container-lowest dark:bg-on-background full-width rounded-t-xl border-t border-outline-variant dark:border-outline flat no shadows mt-auto z-30 shrink-0">
+<!-- Official Gov Branding -->
+<div class="flex flex-col items-center gap-2 mb-2">
+<img alt="Government of India Seal" class="h-12 w-auto object-contain opacity-80 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIEpFpgyfX8mgpqwcYA0kmeY2VdO3y2836IfSQIRRkhfth5A4wRiVH7PqmU0pYD_MRnx6wguRGAXRvlYD-WnQpmUG3AmAG00AY36L0uiMKf4PuwaHWMAJcnxOhHoHJOZcMc5wSLcwnKV0ModCA_edjAxyvWB0oihLnKlbCw0hOWWWdUdogv6rK4WbV2OGGC2HPsQV3zVnS57CsMPUgEJiTlKviaoiYhhceNc7tiJCycTBehDBGURuwH6eHnWcJKE6VnAYvpkSj5Es"/>
+<p class="font-body text-xs text-on-surface-variant font-medium text-center">Powered by AI • Ministry of Electronics &amp; IT</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+<a class="font-body text-label-small text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Privacy Policy</a>
+<a class="font-body text-label-small text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Help Desk</a>
+<a class="font-body text-label-small text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Terms of Service</a>
+</nav>
+<div class="text-label-large font-bold text-on-surface flex flex-col items-center gap-1">
+<p class="font-body text-label-small text-primary dark:text-primary-fixed">© 2024 KumbhSathi AI • Government of India Initiative</p>
+</div>
+</footer>
+</body></html>

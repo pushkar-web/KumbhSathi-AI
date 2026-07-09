@@ -1,0 +1,88 @@
+name: kumbhsathi_app
+description: "KumbhSathi AI — Missing-Person Incident Management & Decision Support OS for Kumbh Mela 2027."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  # Color.withValues(...) is used across screens — requires Flutter 3.27+ / Dart 3.6+.
+  sdk: ">=3.6.0 <4.0.0"
+  flutter: ">=3.27.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.3.5
+
+  # Routing
+  go_router: ^17.3.0
+
+  # Networking
+  dio: ^5.5.0
+  web_socket_channel: ^3.0.3
+
+  # Maps & charts
+  flutter_map: ^8.3.0
+  latlong2: ^0.9.1
+  fl_chart: ^1.2.0
+
+  # Forms & input
+  flutter_form_builder: ^10.3.0
+  form_builder_validators: ^11.0.0
+  image_picker: ^1.1.2
+  camera: ^0.12.0+1
+  google_mlkit_face_detection: ^0.13.2
+  google_mlkit_text_recognition: ^0.15.0
+  mobile_scanner: ^7.2.0
+  record: ^6.2.1
+
+  # On-device AI (offline-first)
+  flutter_gemma: ^0.9.0          # Gemma 3n via MediaPipe LLM inference
+  tflite_flutter: ^0.11.0        # MobileFaceNet face embeddings
+  image: ^4.2.0                  # face crop / preprocessing
+  connectivity_plus: ^6.1.0      # online/offline AI routing
+  crypto: ^3.0.5                 # Aadhaar SHA-256 hashing
+  archive: ^3.6.1                # Aadhaar secure-QR zlib inflate
+  path_provider: ^2.1.4          # model storage
+
+  # Storage
+  flutter_secure_storage: ^10.3.1
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # UI / UX
+  google_fonts: ^8.1.0
+  material_symbols_icons: ^4.2785.1
+  flutter_animate: ^4.5.0
+  shimmer: ^3.0.0
+  cached_network_image: ^3.3.1
+  qr_flutter: ^4.1.0
+
+  # Output / docs
+  pdf: ^3.11.1
+  printing: ^5.13.1
+
+  # Utils
+  intl: ^0.20.2
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.9.0
+  collection: ^1.18.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.11
+  freezed: ^2.5.7
+  json_serializable: ^6.8.0
+  riverpod_generator: ^2.4.3
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/

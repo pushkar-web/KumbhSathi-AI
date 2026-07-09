@@ -1,0 +1,52 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs and editors
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.history/
+
+# Flutter/Dart
+kumbhsathi_app/.dart_tool/
+kumbhsathi_app/.flutter-plugins
+kumbhsathi_app/.flutter-plugins-dependencies
+kumbhsathi_app/.pub-cache/
+kumbhsathi_app/.pub/
+kumbhsathi_app/build/
+kumbhsathi_app/coverage/
+kumbhsathi_app/android/app/debug/
+kumbhsathi_app/android/app/profile/
+kumbhsathi_app/android/app/release/
+kumbhsathi_app/app.*.symbols
+kumbhsathi_app/app.*.map.json
+
+# Python
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+backend/venv/
+backend/.venv/
+venv/
+.venv/
+env/
+.env/
+
+# Credentials & environment variables
+.env
+.env.local
+.env.*.local
+*.env
+backend/.env
+kumbhsathi_app/.env
+
+# Custom agent folder
+.agents/
+.gemini/
+.claude/
+.mcp.json

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register Missing Person - Step 1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d4dbe1",
+                    "surface-container-low": "#f0f4f8",
+                    "surface-container": "#e9eef3",
+                    "on-primary-fixed-variant": "#002957",
+                    "secondary-container": "#d9e2ff",
+                    "on-tertiary": "#fff7f5",
+                    "on-tertiary-container": "#371200",
+                    "on-primary": "#f8f8ff",
+                    "on-tertiary-fixed": "#000000",
+                    "primary": "#005eb8",
+                    "primary-fixed": "#609efd",
+                    "surface-container-high": "#e3e9ee",
+                    "inverse-primary": "#609efd",
+                    "surface": "#f7f9fc",
+                    "error": "#a83836",
+                    "on-primary-container": "#002046",
+                    "surface-variant": "#dce3e9",
+                    "primary-dim": "#0052a2",
+                    "tertiary-fixed-dim": "#eb6600",
+                    "tertiary-container": "#ff7004",
+                    "inverse-surface": "#0b0f11",
+                    "secondary-fixed-dim": "#c5d4ff",
+                    "on-background": "#2c3338",
+                    "inverse-on-surface": "#9a9da0",
+                    "on-error-container": "#6e0a12",
+                    "surface-container-highest": "#dce3e9",
+                    "primary-fixed-dim": "#5191ee",
+                    "secondary-fixed": "#d9e2ff",
+                    "error-dim": "#67040d",
+                    "on-error": "#fff7f6",
+                    "on-tertiary-fixed-variant": "#471900",
+                    "secondary": "#2c5bb6",
+                    "tertiary-fixed": "#ff7004",
+                    "background": "#f7f9fc",
+                    "on-primary-fixed": "#000000",
+                    "primary-container": "#609efd",
+                    "on-secondary-fixed": "#003b8d",
+                    "on-secondary-fixed-variant": "#2858b2",
+                    "outline-variant": "#abb3b9",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#596065",
+                    "outline": "#747c81",
+                    "on-surface": "#2c3338",
+                    "error-container": "#fa746f",
+                    "surface-bright": "#f7f9fc",
+                    "surface-tint": "#005eb8",
+                    "tertiary-dim": "#8c3a00",
+                    "tertiary": "#a04300",
+                    "on-secondary": "#f9f8ff",
+                    "on-secondary-container": "#194da7",
+                    "secondary-dim": "#1b4fa9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px",
+                    "ROUND_EIGHT": "0.5rem"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Inter", "sans-serif"
+                    ],
+                    "display": [
+                            "Inter", "sans-serif"
+                    ],
+                    "body": [
+                            "Inter", "sans-serif"
+                    ],
+                    "label": [
+                            "Inter", "sans-serif"
+                    ]
+            },
+            "fontSize": {}
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Hide scrollbar for cleaner UI on mobile wizard */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top App Bar (Modified for Wizard - Back Button instead of Avatar/Profile) -->
+<header class="bg-surface flex items-center justify-between px-4 h-16 w-full shadow-sm sticky top-0 z-50">
+<button aria-label="Go Back" class="p-2 -ml-2 rounded-full hover:bg-surface-container-highest transition-colors active:opacity-80 text-on-surface-variant">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-primary font-headline font-black text-lg tracking-tight">KumbhSathi AI</h1>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col max-w-md mx-auto w-full pb-24 relative overflow-y-auto">
+<!-- Progress Section -->
+<section class="px-6 py-4 bg-surface-container-lowest">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label text-sm font-semibold text-primary">Step 1 of 3</span>
+<span class="font-label text-xs text-on-surface-variant font-medium">Personal Details</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full transition-all duration-300 ease-in-out" style="width: 33.33%"></div>
+</div>
+</section>
+<!-- Form Container -->
+<div class="px-6 py-4 flex flex-col gap-6 flex-1">
+<!-- Photo Upload Hero -->
+<div class="w-full aspect-square bg-surface-container rounded-ROUND_EIGHT border-2 border-dashed border-outline-variant flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-high transition-colors group relative overflow-hidden">
+<div class="flex flex-col items-center justify-center p-6 text-center z-10">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-3xl">add_a_photo</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-1">Upload Photo</h3>
+<p class="font-body text-sm text-on-surface-variant">Tap to Upload Photo of Missing Person</p>
+<p class="font-body text-xs text-on-surface-variant mt-2 opacity-70">Clear, front-facing image preferred.</p>
+</div>
+</div>
+<!-- Form Fields -->
+<form class="flex flex-col gap-5">
+<!-- Full Name -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-sm font-medium text-on-surface" for="fullName">Full Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">person</span>
+<input class="w-full bg-surface-container-lowest border border-outline rounded-ROUND_EIGHT py-3 pl-10 pr-4 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-on-surface-variant" id="fullName" placeholder="Enter full name" type="text"/>
+</div>
+</div>
+<!-- Gender -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-sm font-medium text-on-surface">Gender</label>
+<div class="flex bg-surface-container-low rounded-ROUND_EIGHT p-1 border border-outline-variant">
+<label class="flex-1 text-center cursor-pointer">
+<input class="peer sr-only" name="gender" type="radio" value="male"/>
+<div class="py-2 px-3 rounded text-sm font-medium text-on-surface-variant peer-checked:bg-secondary-container peer-checked:text-on-secondary-container transition-colors">Male</div>
+</label>
+<label class="flex-1 text-center cursor-pointer">
+<input class="peer sr-only" name="gender" type="radio" value="female"/>
+<div class="py-2 px-3 rounded text-sm font-medium text-on-surface-variant peer-checked:bg-secondary-container peer-checked:text-on-secondary-container transition-colors">Female</div>
+</label>
+<label class="flex-1 text-center cursor-pointer">
+<input class="peer sr-only" name="gender" type="radio" value="other"/>
+<div class="py-2 px-3 rounded text-sm font-medium text-on-surface-variant peer-checked:bg-secondary-container peer-checked:text-on-secondary-container transition-colors">Other</div>
+</label>
+</div>
+</div>
+<!-- Age Band -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-sm font-medium text-on-surface" for="ageBand">Estimated Age</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest border border-outline rounded-ROUND_EIGHT py-3 pl-4 pr-10 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="ageBand">
+<option disabled="" selected="" value="">Select age range</option>
+<option value="0-12">0-12 Years (Child)</option>
+<option value="13-17">13-17 Years (Teenager)</option>
+<option value="18-40">18-40 Years (Young Adult)</option>
+<option value="41-60">41-60 Years (Adult)</option>
+<option value="60+">60+ Years (Senior)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+<!-- Origin Grid -->
+<div class="grid grid-cols-2 gap-4">
+<!-- State -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-sm font-medium text-on-surface" for="state">State of Origin</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-lowest border border-outline rounded-ROUND_EIGHT py-3 pl-3 pr-8 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm" id="state">
+<option disabled="" selected="" value="">Select State</option>
+<option value="UP">Uttar Pradesh</option>
+<option value="MP">Madhya Pradesh</option>
+<option value="BR">Bihar</option>
+<option value="UK">Uttarakhand</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-xl">arrow_drop_down</span>
+</div>
+</div>
+<!-- District -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-sm font-medium text-on-surface" for="district">District</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low border border-outline-variant rounded-ROUND_EIGHT py-3 pl-3 pr-8 text-on-surface-variant focus:outline-none transition-all text-sm opacity-70" disabled="" id="district">
+<option disabled="" selected="" value="">Select District</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-xl">arrow_drop_down</span>
+</div>
+</div>
+</div>
+</form>
+</div>
+</main>
+<!-- Sticky Bottom Action & Footer -->
+<div class="fixed bottom-0 left-0 w-full bg-surface border-t border-outline-variant z-40">
+<div class="max-w-md mx-auto w-full px-6 py-4 flex flex-col gap-4">
+<button class="w-full bg-primary hover:bg-primary-dim text-on-primary font-label font-bold text-base rounded-full py-4 px-6 flex items-center justify-between transition-colors shadow-sm active:scale-[0.98]">
+<span>Next: Description</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<!-- Authority Footer -->
+<div class="flex items-center justify-center gap-2 pb-2">
+<img alt="Government of India Emblem" class="w-6 h-6 object-contain opacity-80" src="https://lh3.googleusercontent.com/aida/AP1WRLuyjoL4E-sC_NInN48T13mzAb5mEaXdFRY7bkOfXK2BIWCJIizCKhIL3E8PWu8PIGNABsozgIySWfzuoYoEMV_zuk786EVQcDugZairUKzsNWJZRqOzVt8ilFPV0ICci6nhr6eKAPc5PPl3_WaAbAYl9JaUyRZJ7lfK6-fNBASQ_W5SWNgkx1dpnebLbzXOQe8WSXfLvBUr92Hpjzj1st5jGgPiV9AHR6OIZQtCI1r0bkYvb7waZYPqKYQ"/>
+<span class="font-body text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">Official Government Portal</span>
+</div>
+</div>
+</div>
+<script>
+        // Simple script to enable district when state is selected
+        document.getElementById('state').addEventListener('change', function() {
+            const districtSelect = document.getElementById('district');
+            districtSelect.disabled = false;
+            districtSelect.classList.remove('bg-surface-container-low', 'opacity-70', 'border-outline-variant');
+            districtSelect.classList.add('bg-surface-container-lowest', 'border-outline', 'focus:ring-2', 'focus:ring-primary');
+            districtSelect.innerHTML = '<option value="" disabled selected>Select District</option><option value="1">Prayagraj</option><option value="2">Varanasi</option><option value="3">Lucknow</option>';
+        });
+    </script>
+</body></html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Family Notifications - KumbhSathi AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#a04300",
+                        "outline": "#747c81",
+                        "on-secondary-fixed-variant": "#2858b2",
+                        "tertiary-container": "#ff7004",
+                        "secondary-fixed": "#d9e2ff",
+                        "on-primary-fixed": "#000000",
+                        "primary-fixed": "#609efd",
+                        "surface-container": "#e9eef3",
+                        "secondary-fixed-dim": "#c5d4ff",
+                        "secondary-dim": "#1b4fa9",
+                        "surface-bright": "#f7f9fc",
+                        "secondary": "#2c5bb6",
+                        "error-dim": "#67040d",
+                        "primary-fixed-dim": "#5191ee",
+                        "background": "#f7f9fc",
+                        "on-error-container": "#6e0a12",
+                        "inverse-on-surface": "#9a9da0",
+                        "surface-container-highest": "#dce3e9",
+                        "on-primary-fixed-variant": "#002957",
+                        "on-tertiary-fixed": "#000000",
+                        "inverse-primary": "#609efd",
+                        "error": "#a83836",
+                        "on-primary-container": "#002046",
+                        "surface-container-low": "#f0f4f8",
+                        "primary-container": "#609efd",
+                        "on-error": "#fff7f6",
+                        "on-secondary": "#f9f8ff",
+                        "surface-tint": "#005eb8",
+                        "surface": "#f7f9fc",
+                        "outline-variant": "#abb3b9",
+                        "on-secondary-fixed": "#003b8d",
+                        "surface-variant": "#dce3e9",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#d9e2ff",
+                        "on-secondary-container": "#194da7",
+                        "error-container": "#fa746f",
+                        "surface-container-high": "#e3e9ee",
+                        "surface-dim": "#d4dbe1",
+                        "tertiary-fixed": "#ff7004",
+                        "on-tertiary-container": "#371200",
+                        "primary": "#005eb8",
+                        "primary-dim": "#0052a2",
+                        "on-primary": "#f8f8ff",
+                        "on-surface": "#2c3338",
+                        "inverse-surface": "#0b0f11",
+                        "on-tertiary": "#fff7f5",
+                        "on-surface-variant": "#596065",
+                        "tertiary-dim": "#8c3a00",
+                        "tertiary-fixed-dim": "#eb6600",
+                        "on-background": "#2c3338",
+                        "on-tertiary-fixed-variant": "#471900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "display": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen pb-24 pt-16 selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-low shadow-sm flex justify-between items-center px-4 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high flex-shrink-0">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A close up, professional portrait of an Indian person, neutral expression, soft lighting, acting as a user avatar, set against a solid subtle blue background in a modern app aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6-cjQ8l1_0dK0E0DeD_zoPREqQ6Pba4yA5Q_sT7t_5qi6M_EEZ9ZqBQUm9hHtrjxjEgdt8TADQv7YEN40OYq7Qd2_8juDJ3xTE9L1BaBILRs7XlYoqQGTEuK-qHCjeD8knIDBY6QuMqf3z4wmSYwS58Tq_qspsvOsoICdBIPN6JECawHxTjNJPVnacHUBaPPFfrtauz02CZFd8aL5TLdPAzGcrfli6Ql9pq_j_hBvgKYDJ_XRdZm3Tdzfrn_QVz-S16Ut28uCWok"/>
+</div>
+<h1 class="text-xl font-black text-primary font-headline tracking-tight">SafeReturn</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-100 relative">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+<span class="absolute top-2 right-2.5 w-2 h-2 bg-error rounded-full"></span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="max-w-3xl mx-auto px-4 py-6 md:px-8 space-y-6">
+<div class="flex items-center justify-between mt-2">
+<div>
+<h2 class="text-2xl font-bold font-headline text-on-surface tracking-tight">Notifications</h2>
+<p class="text-sm text-on-surface-variant mt-1 font-body">Recent updates on your case</p>
+</div>
+<button class="text-primary font-medium text-sm hover:text-primary-dim transition-colors px-3 py-1.5 rounded-full hover:bg-primary/5 active:scale-95 duration-100">
+                Mark all as read
+            </button>
+</div>
+<div class="space-y-4">
+<!-- High Priority Card -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-variant overflow-hidden flex flex-col md:flex-row relative hover:shadow-md transition-shadow">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-error"></div>
+<div class="p-4 md:p-5 flex gap-4 items-start w-full pl-6">
+<div class="w-10 h-10 rounded-full bg-error-container text-on-error-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">videocam</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-semibold text-on-surface text-base md:text-lg leading-tight">Update: Location Spotted</h3>
+<span class="text-xs font-medium text-error flex-shrink-0 mt-0.5">5 mins ago</span>
+</div>
+<p class="text-on-surface-variant text-sm mt-2 leading-relaxed font-body">CCTV Camera 142 detected a high-probability match in Sector 3 at 12:45 PM. Volunteer dispatched.</p>
+<div class="mt-3 flex gap-2">
+<button class="text-xs font-medium bg-surface-container text-on-surface px-3 py-1.5 rounded-full hover:bg-surface-container-high transition-colors">View on Map</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Medium Priority Card -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-variant overflow-hidden flex flex-col md:flex-row relative hover:shadow-md transition-shadow">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary-container"></div>
+<div class="p-4 md:p-5 flex gap-4 items-start w-full pl-6">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/20 text-tertiary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-semibold text-on-surface text-base md:text-lg leading-tight">Volunteer Assigned</h3>
+<span class="text-xs font-medium text-on-surface-variant flex-shrink-0 mt-0.5">1 hr ago</span>
+</div>
+<p class="text-on-surface-variant text-sm mt-2 leading-relaxed font-body">Officer Sharma has assigned volunteer Amit Singh to search for Ramesh Kumar.</p>
+</div>
+</div>
+</article>
+<!-- Info Priority Card -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-variant overflow-hidden flex flex-col md:flex-row relative opacity-75 hover:opacity-100 transition-opacity">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="p-4 md:p-5 flex gap-4 items-start w-full pl-6">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-semibold text-on-surface text-base md:text-lg leading-tight">Case Registered</h3>
+<span class="text-xs font-medium text-on-surface-variant flex-shrink-0 mt-0.5">2 hrs ago</span>
+</div>
+<p class="text-on-surface-variant text-sm mt-2 leading-relaxed font-body">Your missing report for Ramesh Kumar has been recorded successfully.</p>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container shadow-lg border-t border-outline-variant flex justify-around items-center h-20 px-2 pb-safe w-full md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1 hover:bg-on-surface/5 transition-transform active:scale-90 w-16" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label text-xs font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1 hover:bg-on-surface/5 transition-transform active:scale-90 w-16" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">record_voice_over</span>
+<span class="font-label text-xs font-medium">Report</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1 hover:bg-on-surface/5 transition-transform active:scale-90 w-16" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">location_on</span>
+<span class="font-label text-xs font-medium">Track</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-5 py-1 hover:bg-on-surface/5 transition-transform active:scale-90 w-20" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="font-label text-xs font-medium">Notifications</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-1 hover:bg-on-surface/5 transition-transform active:scale-90 w-16" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label text-xs font-medium">Profile</span>
+</a>
+</nav>
+<!-- Desktop SideNav (Hidden on Mobile) - Simplified for structural parity -->
+<nav class="hidden md:flex fixed left-0 top-16 bottom-0 w-64 bg-surface-container border-r border-outline-variant flex-col py-6 px-4 gap-2 z-40">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-medium">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">record_voice_over</span>
+<span class="font-medium">Report</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">location_on</span>
+<span class="font-medium">Track</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary-container text-on-secondary-container font-semibold transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span>Notifications</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-medium">Profile</span>
+</a>
+</nav>
+<!-- Desktop layout adjustment -->
+<style>
+        @media (min-width: 768px) {
+            main { margin-left: 16rem; max-width: calc(100% - 16rem); }
+        }
+    </style>
+</body></html>
