@@ -4,6 +4,7 @@ import 'package:material_symbols_icons/symbols.dart';
 
 import '../../core/constants/enums.dart';
 import '../../core/theme/app_colors.dart';
+import '../../core/theme/app_spacing.dart';
 import '../../providers/ai_providers.dart';
 import '../../providers/auth_provider.dart';
 import '../../providers/dashboard_providers.dart';
@@ -72,7 +73,7 @@ class _PortalHomeScreenState extends ConsumerState<PortalHomeScreen> {
                 child: IconButton(
                   tooltip: 'Logout',
                   icon: const Icon(Symbols.logout, color: AppColors.error),
-                  onPressed: () => ref.read(authStateProvider.notifier).logout(),
+                  onPressed: () => _confirmLogout(context),
                 ),
               ),
               destinations: [
@@ -91,8 +92,51 @@ class _PortalHomeScreenState extends ConsumerState<PortalHomeScreen> {
       );
     }
 
-    // Mobile portals (family/volunteer): bottom navigation.
+    // Mobile portals (family/volunteer): bottom navigation with logout action.
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Row(
+          children: [
+            Image.asset(
+              'assets/icons/app_icon.png',
+              height: 28,
+              fit: BoxFit.contain,
+              errorBuilder: (_, __, ___) => const Icon(
+                Symbols.temple_hindu,
+                size: 24,
+                color: AppColors.primary,
+              ),
+            ),
+            const SizedBox(width: AppSpacing.sm),
+            Text(
+              'KumbhSathi AI',
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.ink,
+                  ),
+            ),
+          ],
+        ),
+        backgroundColor: AppColors.surface,
+        surfaceTintColor: Colors.transparent,
+        elevation: 0,
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(1),
+          child: Container(
+            height: 1,
+            color: AppColors.hairline,
+          ),
+        ),
+        actions: [
+          IconButton(
+            tooltip: 'Logout',
+            icon: const Icon(Symbols.logout, size: 22, color: AppColors.danger),
+            onPressed: () => _confirmLogout(context),
+          ),
+          const SizedBox(width: AppSpacing.xs),
+        ],
+      ),
       body: body,
       bottomNavigationBar: NavigationBar(
         selectedIndex: index,
@@ -113,6 +157,36 @@ class _PortalHomeScreenState extends ConsumerState<PortalHomeScreen> {
         ],
       ),
     );
+  }
+
+  /// Shows a confirmation dialog before logging out.
+  Future<void> _confirmLogout(BuildContext context) async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppRadius.modal),
+        ),
+        title: const Text('Logout'),
+        content: const Text(
+          'Are you sure you want to logout? Any pending offline data will sync when you log back in.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(ctx).pop(false),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(ctx).pop(true),
+            style: TextButton.styleFrom(foregroundColor: AppColors.danger),
+            child: const Text('Logout'),
+          ),
+        ],
+      ),
+    );
+    if (confirmed == true && mounted) {
+      ref.read(authStateProvider.notifier).logout();
+    }
   }
 
   void _showMore(BuildContext context, UserRole role) {
@@ -140,7 +214,7 @@ class _PortalHomeScreenState extends ConsumerState<PortalHomeScreen> {
               title: const Text('Logout'),
               onTap: () {
                 Navigator.pop(context);
-                ref.read(authStateProvider.notifier).logout();
+                _confirmLogout(context);
               },
             ),
           ],

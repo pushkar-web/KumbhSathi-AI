@@ -1,7 +1,7 @@
 name: kumbhsathi_app
 description: "KumbhSathi AI — Missing-Person Incident Management & Decision Support OS for Kumbh Mela 2027."
 publish_to: 'none'
-version: 1.0.0+1
+version: 2.0.0+2
 
 environment:
   # Color.withValues(...) is used across screens — requires Flutter 3.27+ / Dart 3.6+.
@@ -86,3 +86,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/icons/

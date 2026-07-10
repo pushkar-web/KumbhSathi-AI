@@ -3,7 +3,7 @@
 ### Developed for Kumbh Mela 2027
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/pushkar-web/KumbhSathi-AI?color=orange&logo=github)](https://github.com/pushkar-web/KumbhSathi-AI/releases/latest)
-[![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20Web-blue.svg?logo=android)](https://github.com/pushkar-web/KumbhSathi-AI/releases/tag/v1.0.0)
+[![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20Web-blue.svg?logo=android)](https://github.com/pushkar-web/KumbhSathi-AI/releases/tag/v2.0.0)
 [![Tech Stack](https://img.shields.io/badge/Stack-Flutter%20%7C%20FastAPI%20%7C%20PostgreSQL-teal.svg)](https://github.com/pushkar-web/KumbhSathi-AI)
 
 KumbhSathi AI is an enterprise-grade, high-reliability, and offline-first decision support and incident management operating system designed for the high-density crowds of **Kumbh Mela 2027**. Its primary objective is to streamline the registration, tracking, identification, and reunion of missing individuals in environments with severely degraded network connectivity.
@@ -14,9 +14,27 @@ KumbhSathi AI is an enterprise-grade, high-reliability, and offline-first decisi
 
 If you want to download and test the Android mobile app, you can download the compiled production APK directly from the latest release:
 
-📥 **[Download KumbhSathi AI Release APK (v1.0.0)](https://github.com/pushkar-web/KumbhSathi-AI/releases/download/v1.0.0/app-release.apk)**
+📥 **[Download KumbhSathi AI Release APK (v2.0.0)](https://github.com/pushkar-web/KumbhSathi-AI/releases/download/v2.0.0/app-release.apk)**
 
 > **Note:** Since this is a production-compiled package, you may need to allow installation from unknown sources in your Android security settings.
+
+---
+
+## 🆕 What's New in v2.0.0
+
+### Premium Splash Screen & Onboarding
+* **Branded Splash Screen**: A beautiful full-bleed gradient splash with the KumbhSathi AI logo, animated entry, and auto-navigation — appears every time the app launches.
+* **3-Page Onboarding Flow**: First-time users are guided through the app's core capabilities: Missing Person Tracking, AI-Powered Face Matching, and Offline-First Architecture — with smooth page transitions and accent-highlighted indicators.
+* **Smart Navigation**: Splash → Onboarding (first install only) → Register → Login → Role Dashboard. Returning users skip onboarding automatically.
+
+### Auth Flow Improvements
+* **OTP Flow Removed**: Simplified authentication — direct password-based login for reliability in low-connectivity environments.
+* **Role-Based Dashboard Redirect**: After login, users are automatically routed to their specific role dashboard (Family, Police, Volunteer, or Admin).
+* **Logout Accessible Everywhere**: Logout button now prominently visible on every role's navigation bar with confirmation dialog.
+
+### App Identity
+* **Custom App Icon**: New branded launcher icon with adaptive icon support — appears correctly on all Android home screens and app drawers.
+* **App Name**: Home screen now displays "KumbhSathi AI" instead of package name.
 
 ---
 
@@ -54,6 +72,8 @@ KumbhSathi-AI/
 ├── kumbhsathi_app/             # Flutter Mobile Client (Android & Web)
 │   ├── lib/
 │   │   ├── features/           # Portals: family, volunteer, police, admin
+│   │   │   ├── auth/screens/   # Splash, Onboarding, Login, Register
+│   │   │   └── shell/          # Role-aware navigation shell
 │   │   ├── core/theme/         # Sanctum Design System v2 colors & typography
 │   │   ├── providers/          # Riverpod state management & wiring
 │   │   ├── services/           # Face matching, Aadhaar parsing, AI Orchestration

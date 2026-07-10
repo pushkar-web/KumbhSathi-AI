@@ -73,13 +73,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     }
   }
 
-  void _openOtp() {
-    final phoneVal = _phone.text.trim();
-    context.push(
-      Routes.otp,
-      extra: phoneVal.isNotEmpty ? '+91$phoneVal' : null,
-    );
-  }
+
 
   /// Staggered entrance for the card sections (≤6, 50ms apart).
   Widget _stagger(int index, Widget child) => child
@@ -282,23 +276,11 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             const SizedBox(height: AppSpacing.xs),
             _stagger(
               4,
-              Column(
-                children: [
-                  PrimaryCta(
-                    label: 'Login',
-                    icon: Symbols.login,
-                    loading: _loading,
-                    onPressed: _submit,
-                  ),
-                  const SizedBox(height: AppSpacing.base),
-                  const _LoginOrDivider(),
-                  const SizedBox(height: AppSpacing.base),
-                  PrimaryCta.tonal(
-                    label: 'Login with OTP',
-                    icon: Symbols.pin,
-                    onPressed: _loading ? null : _openOtp,
-                  ),
-                ],
+              PrimaryCta(
+                label: 'Login',
+                icon: Symbols.login,
+                loading: _loading,
+                onPressed: _submit,
               ),
             ),
             const SizedBox(height: AppSpacing.lg),
@@ -568,27 +550,4 @@ class _LoginLangChip extends StatelessWidget {
   }
 }
 
-class _LoginOrDivider extends StatelessWidget {
-  const _LoginOrDivider();
 
-  @override
-  Widget build(BuildContext context) {
-    const line = Expanded(child: Divider(color: AppColors.hairline));
-    return Row(
-      children: [
-        line,
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.base),
-          child: Text(
-            'OR',
-            style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                  color: AppColors.inkFaint,
-                  fontWeight: FontWeight.w600,
-                ),
-          ),
-        ),
-        line,
-      ],
-    );
-  }
-}

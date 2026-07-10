@@ -1,7 +1,7 @@
 /// Static, compile-time app configuration.
 abstract final class AppConstants {
   static const String appName = 'KumbhSathi AI';
-  static const String appVersion = '1.0.0';
+  static const String appVersion = '2.0.0';
 
   /// Base URL of the FastAPI backend. Override at build time with:
   ///   flutter run --dart-define=API_BASE_URL=http://10.0.2.2:8000
